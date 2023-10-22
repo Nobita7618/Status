@@ -45,11 +45,11 @@ async def main():
                     async for x in messages:
                         msg = x.text
                     if msg == "/statusbot":
-                        TEXT += f"\n\n🤖 - **[{ok.first_name}](tg://openmessage?user_id={ok.id}): ❌ ᴏғғʟɪɴᴇ**"
+                        TEXT += f"\n**[{ok.first_name}](tg://openmessage?user_id={ok.id}): ᴏғғʟɪɴᴇ**"
                         if OWNER_ID:
-                            await bot.send_message(OWNER_ID, f'Alert {ok.first_name} is ᴏғғʟɪɴᴇ 💀')
+                            await bot.send_message(OWNER_ID, f' {ok.first_name} is ᴏғғʟɪɴᴇ 💀')
                     else:
-                        TEXT += f"\n\n🤖 - **[{ok.first_name}](tg://openmessage?user_id={ok.id}): ✅ ᴏɴʟɪɴᴇ**\n**{msg}**"
+                        TEXT += f"\n\n╭⎋ **[{ok.first_name}](tg://openmessage?user_id={ok.id}): ᴀʟɪᴠᴇ ✨**\n╰⊚ **{msg}**"
                     await app.read_chat_history(bots)
                 except FloodWait as e:
                     await asyncio.sleep(e.value)
